@@ -86,7 +86,7 @@ class RLDataset(data.Dataset):
                     im_with_bb = draw_box(self.env.get_current_img(), self.env.get_state())
 
                 if args.save_result_images:
-                    cv2.imwrite('images/' + str(clip_idx) + '-' + str(t) + '.jpg', im_with_bb)
+                    cv2.imwrite('../images/' + str(clip_idx) + '-' + str(t) + '.jpg', im_with_bb)
 
                 curr_patch = self.env.get_current_patch()
                 if args.cuda:

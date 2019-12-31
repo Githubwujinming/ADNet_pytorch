@@ -22,7 +22,7 @@ def get_video_infos(bench_name, video_path, video_name):
         benchmarkSeqHome = video_path
 
         # img path
-        imgDir = os.path.join('..', benchmarkSeqHome, video_name)
+        imgDir = os.path.join('..', benchmarkSeqHome, video_name, 'img')
         if not os.path.exists(imgDir):
             print(imgDir + ' does not exist!')
             sys.exit(1)
@@ -35,7 +35,7 @@ def get_video_infos(bench_name, video_path, video_name):
             video_info['img_files'].append(img_path)
 
         # gt path
-        gtPath = os.path.join('..', benchmarkSeqHome, video_name, 'groundtruth.txt')
+        gtPath = os.path.join('..', benchmarkSeqHome, video_name, video_name + '.txt')
 
         if not os.path.exists(gtPath):
             print(gtPath + ' does not exist!')
@@ -47,7 +47,8 @@ def get_video_infos(bench_name, video_path, video_name):
         for i in range(len(gt)):
             if gt[i] == '' or gt[i] is None:
                 continue
-            gt[i] = gt[i].split(',')
+            gt[i] = gt[i].split(' ')[1:]
+            print(gt[i])
             gt[i] = list(map(float, gt[i]))
         gtFile.close()
 

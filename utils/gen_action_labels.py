@@ -61,3 +61,4 @@ def gen_action_labels(num_actions, opts, bb_samples, gt_bbox):
 # gt_bbox = [50,50,20,20]
 # pos_examples = gen_samples('gaussian', gt_bbox, opts['nPos_train']*5, opts, 0.1, 5)
 # gen_action_labels(opts['num_actions'], opts, pos_examples, gt_bbox)
+# produce pos neg pos sample

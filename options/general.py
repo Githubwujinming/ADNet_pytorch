@@ -11,7 +11,7 @@ GT_anno_interval = 1
 # ============================
 opts = {
     'imgSize' : [112, 112, 3],
-    'train_dbs' : ['vot15', 'vot14', 'vot13'],
+    'train_dbs' : ['vot13'],
     'test_db' : 'otb',
     'train': {
         'weightDecay' : 0.0005,
@@ -23,7 +23,7 @@ opts = {
         'RL_steps' : 10
     },
     'minibatch_size' : 32,
-    'numEpoch' : 30,
+    'numEpoch' : 1,
     'numInnerEpoch' : 3,
     'continueTrain' : False,
     'samplePerFrame_large' : 40,
